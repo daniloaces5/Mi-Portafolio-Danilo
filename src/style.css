@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-crema: #f5e4ce;
+  --color-azulOscuro: #1c2b38;
+  --color-naranja: #f97316;
+  --color-amarillo: #f7df1e;
+  --color-rojo: #de4c36;
+  --color-gris: #2f3e46;
+  --color-negro: #0d1117;
+}
+
+@layer components {
+  .open span:nth-child(1) {
+    @apply translate-y-[12px] rotate-45;
+  }
+  .open span:nth-child(2) {
+    @apply opacity-0;
+  }
+  .open span:nth-child(3) {
+    @apply -translate-y-[10px] -rotate-45;
+  }
+}
+.open span:nth-child(1) {
+  @apply bg-naranja;
+}
+.open span:nth-child(3) {
+  @apply bg-naranja;
+}
+
+@theme {
+  --font-anton: "Anton", sans-serif; 
+}
+
+header nav a {
+  @apply mx-5 hover:text-naranja;
+}
+
+.h2{
+  @apply md:w-5/7 mx-auto max-w-[1000px]
+}
+
+h2{
+    @apply text-4xl font-bold mt-15 flex justify-center md:justify-start
+}
+
+.project{
+    @apply md:my-0 my-10 relative rounded-4xl overflow-hidden
+}
+
+.project img{
+    @apply w-full h-auto object-cover aspect-3/2 group-hover:scale-120 z-0 transition-transform duration-500
+}
+
+
+.project-revel{
+    @apply absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-400 z-10
+}
+
+.project-revel h3{
+    @apply text-white text-2xl font-bold mb-4
+}
+
+.project-revel a{
+    @apply border-2 border-naranja font-semibold text-white py-2 px-4 rounded-full hover:bg-naranja transition
+}
