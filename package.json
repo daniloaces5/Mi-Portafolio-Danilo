@@ -16,5 +16,10 @@
     "@tailwindcss/vite": "^4.1.5",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.5"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.367",
+    "@iconify/react": "^6.0.0",
+    "@iconify/tailwind4": "^1.0.6"
   }
 }

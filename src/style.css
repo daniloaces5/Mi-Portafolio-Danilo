@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@plugin "@iconify/tailwind4";
 
 @import "tailwindcss";
 
@@ -46,23 +47,14 @@ h2{
     @apply text-4xl font-bold mt-15 flex justify-center md:justify-start
 }
 
-.project{
-    @apply md:my-0 my-10 relative rounded-4xl overflow-hidden
+#projects .card {
+  @apply mx-auto bg-white rounded-3xl shadow-lg overflow-hidden mb-16
 }
 
-.project img{
-    @apply w-full h-auto object-cover aspect-3/2 group-hover:scale-120 z-0 transition-transform duration-500
+#projects .card_img {
+  @apply relative rounded-t-3xl overflow-hidden
 }
 
-
-.project-revel{
-    @apply absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-400 z-10
-}
-
-.project-revel h3{
-    @apply text-white text-2xl font-bold mb-4
-}
-
-.project-revel a{
-    @apply border-2 border-naranja font-semibold text-white py-2 px-4 rounded-full hover:bg-naranja transition
+#projects .revel {
+  @apply absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-400 z-10
 }
