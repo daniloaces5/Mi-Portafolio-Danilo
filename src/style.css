@@ -35,8 +35,17 @@
   --font-anton: "Anton", sans-serif; 
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 header nav a {
   @apply mx-5 hover:text-naranja;
+}
+
+.hr{
+  @apply my-20 text-orange-800/20
 }
 
 .h2{
@@ -44,7 +53,7 @@ header nav a {
 }
 
 h2{
-    @apply text-4xl font-bold mt-15 flex justify-center md:justify-start
+    @apply text-4xl font-bold mb-15 flex justify-center md:justify-start
 }
 
 #projects .card {
