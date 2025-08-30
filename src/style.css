@@ -59,7 +59,7 @@ header nav a {
 }
 
 h2{
-    @apply text-4xl font-bold mb-15 flex justify-center md:justify-start
+    @apply text-4xl font-bold mb-10 flex justify-center md:justify-start
 }
 
 #projects .card {
