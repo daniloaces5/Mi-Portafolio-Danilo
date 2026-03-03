@@ -1,327 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Danilo - Desarrollador Web</title>
-    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Danilo — Backend Developer Node.js · APIs · PostgreSQL</title>
     <meta name="description"
-        content="Soy Danilo, un desarrollador web enfocado en crear experiencias digitales funcionales y accesibles. Mira mis proyectos y stack." />
-    <meta name="keywords"
-        content="Desarrollador web, portfolio, HTML, CSS, JavaScript, proyectos, frontend, backend, GitHub" />
-    <meta name="author" content="Danilo" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
+        content="Danilo — Backend Developer especializado en Node.js, Express, PostgreSQL y diseño de APIs escalables. Proyectos 2025." />
+    <!-- Tailwind CDN para prototipo; en producción compilar Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body class="bg-crema max-w-[1400px] min-w-[520px] mx-auto text-center">
-    <header class="flex justify-end max-w-[1400px] mx-auto">
-        <nav id="navpc" class="mt-10 hidden md:flex justify-end w-1/3 text-2xl font-semibold ">
-            <a href="#about">Acerca</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#contacto">Contacto</a>
+<body class="bg-[color:var(--bg)] text-slate-900 antialiased">
+    <header class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="#" class="text-xl font-extrabold tracking-tight">
+            DANILO<span class="text-[color:var(--accent)]">·BACKEND</span>
+        </a>
+
+        <nav class="hidden md:flex gap-5 text-md font-bold text-slate-700">
+            <a href="#about" class="hover:text-slate-900 transition">Sobre</a>
+            <a href="#projects" class="hover:text-slate-900 transition">Proyectos</a>
+            <a href="#contact" class="hover:text-slate-900 transition">Contacto</a>
         </nav>
 
-        <div id="menu-btn"
-            class="z-100 m-10 w-8 h-6 flex flex-col justify-between items-center cursor-pointer group md:hidden">
-            <span
-                class="bar w-full h-0.5 bg-black rounded transition-all duration-300 origin-center group-hover:bg-naranja"></span>
-            <span
-                class="bar w-full h-0.5 bg-black rounded transition-all duration-300 origin-center group-hover:bg-naranja"></span>
-            <span
-                class="bar w-full h-0.5 bg-black rounded transition-all duration-300 origin-center group-hover:bg-naranja"></span>
-        </div>
-
-        <nav id="mobile-menu"
-            class="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col justify-center items-center text-[#f5e4ce] text-2xl space-y-6 z-40 opacity-0 pointer-events-none transition-opacity duration-300">
-            <a href="#about" class="hover:text-naranja transition">Acerca</a>
-            <a href="#projects" class="hover:text-naranja transition">Proyectos</a>
-            <a href="#contacto" class="hover:text-naranja transition">Contacto</a>
-        </nav>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu"
+            class="md:hidden p-2 rounded focus-ring">
+            <span class="sr-only">Abrir menú</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
     </header>
 
-    <section id="presentation" class="mt-10 md:mt-35 items-center mx-auto w-4/5">
-        <div class="w-4/5 mx-auto text-center">
-            <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lead ing-tight text-center">
-                Desarrollador frontend <br> React + Tailwind
-            </h1>
-            <p class="mt-4 text-base md:text-lg text-neutral-700">Desarrollador frontend apasionado por crear
-                experiencias web rápidas, accesibles y modernas usando React y Tailwind. Mi enfoque está en la
-                usabilidad, rendimiento y diseño limpio.</p>
+    <!-- Mobile overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity">
+        <div class="absolute right-6 top-6">
+            <button id="close-menu" class="p-2 rounded bg-white/10 text-white focus-ring">
+                <span class="sr-only">Cerrar menú</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
-        <img class="h-[220px] w-[220px] mx-auto mt-20 bg-azulOscuro rounded-full" src="images/Yo.png" alt="avatar">
-    </section>
+        <nav class="h-full flex flex-col items-center justify-center gap-8 text-white text-2xl">
+            <a href="#about" class="hover:text-[color:var(--accent)] transition">Sobre</a>
+            <a href="#projects" class="hover:text-[color:var(--accent)] transition">Proyectos</a>
+            <a href="#contact" class="hover:text-[color:var(--accent)] transition">Contacto</a>
+        </nav>
+    </div>
 
-    <hr class="hr">
+    <main class="max-w-5xl mx-auto px-6 pb-16">
 
-    <section id="projects">
-        <div class="h2">
-            <h2>Mis proyectos</h2>
-        </div>
-        <div class="m-20 mx-auto w-4/5">
-            <div class="md:grid md:grid-cols-2 mx-auto gap-5 m-10 my-10">
-                <div class="card">
-                    <div class="card_img group">
-                        <img src="images/Game Simon.png" alt="Simon Dice Game" class="aspect-3/2" />
-                        <div class="revel">
-                            <p class="text-white text-sm font-medium w-4/5">
-                                Juego interactivo en JavaScript basado en el clásico Simon Dice. Practica memoria y
-                                reflejos con esta divertida app.
-                            </p>
+        <!-- HERO -->
+
+        <section class="mt-12 grid md:grid-cols-3 gap-10 items-center">
+
+            <div class="md:col-span-2">
+
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    Construyo sistemas backend escalables y mantenibles
+                </h1>
+
+                <p class="mt-5 text-base text-[color:var(--muted)] max-w-2xl">
+                    Backend Developer especializado en Node.js, Express y PostgreSQL. Construyo APIs escalables con
+                    arquitectura limpia y consultas SQL optimizadas. Cuento con experiencia en frontend básico para
+                    integración full-stack y despliegue de aplicaciones en servidores en internet.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="#projects" class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold">
+                        Ver proyectos
+                    </a>
+
+                    <a href="#contact" class="border border-slate-300 px-4 py-2 rounded-md hover:bg-slate-50">
+                        Contactar
+                    </a>
+
+                </div>
+
+                <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-600">
+                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">Node.js</li>
+                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">Express</li>
+                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">PostgreSQL</li>
+                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">REST APIs</li>
+                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">TailwindCSS</li>
+                </ul>
+
+            </div>
+
+            <div class="flex justify-center md:justify-end">
+                <img src="images/Yo.png" alt="Danilo Backend Developer"
+                    class="w-52 h-52 rounded-full object-cover shadow-xl">
+            </div>
+
+        </section>
+
+        <hr class="my-14">
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+            <h2 class="text-2xl font-bold">Proyectos</h2>
+            <p class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl">
+                Proyectos que muestran diseño de APIs, modelado de datos y arquitectura backend.
+            </p>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- PROJECT 1 -->
+                <article
+                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <div class="card-img-wrap overflow-hidden">
+                        <img src="images/Barber-Project.jpg"
+                            class="w-full h-44 object-contain transition-transform duration-300 hover:scale-105"
+                            alt="Proyecto Barbería">
+                    </div>
+
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold">
+                            Proyecto de Barbería
+                        </h3>
+                        <p class="mt-2 text-sm text-[color:var(--muted)]">
+                            Sistema completo de barbería con registro, login, edición y control de roles.
+                        </p>
+                        <div class="mt-4 text-xs text-slate-600">
+                            Node.js · Express · PostgreSQL · JWT
+                        </div>
+                        <div class="mt-5 flex gap-3">
+                            <a href="https://github.com/daniloaces5/Barber-Project"
+                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
+                                Ver GitHub
+                            </a>
+                            <a href="https://barber-project-w76r.onrender.com"
+                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
+                                Ir al sitio
+                            </a>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-xl font-semibold text-gray-800">Simon Dice</h3>
-                            <div class="flex space-x-3 text-gray-500 text-lg">
-                                <span class="icon-[simple-icons--html5]"></span>
-                                <span class="icon-[simple-icons--css]"></span>
-                                <span class="icon-[simple-icons--javascript]"></span>
-                                <span class="icon-[simple-icons--vite]"></span>
-                                <span class="icon-[simple-icons--tailwindcss]"></span>
-                            </div>
+                </article>
+
+                <!-- PROJECT 2 -->
+                <article
+                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+
+                    <div class="card-img-wrap overflow-hidden">
+                        <img src="images/Game Simon.png"
+                            class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
+                            alt="Simon Dice">
+                    </div>
+
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold">
+                            Simon Dice
+                        </h3>
+
+                        <p class="mt-2 text-sm text-[color:var(--muted)]">
+                            Juego interactivo en JavaScript basado en el clásico Simon Dice.
+                        </p>
+
+                        <div class="mt-4 text-xs text-slate-600">
+                            JavaScript · HTML · CSS · TailwindCSS
                         </div>
-                        <p class="text-center text-gray-600 mb-5">Juego interactivo en JavaScript</p>
-                        <div class="flex space-x-4">
+
+                        <div class="mt-5 flex gap-3">
+
                             <a href="https://github.com/daniloaces5/SimonDice"
-                                class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 rounded-xl text-center hover:bg-gray-300 transition"
-                                type="button">Ver GitHub</a>
+                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
+                                Ver GitHub
+                            </a>
+
                             <a href="https://simon-dice-seven.vercel.app/"
-                                class="flex-1 bg-blue-600 text-white font-semibold py-3 rounded-xl text-center hover:bg-blue-700 transition"
-                                type="button">Ver Sitio</a>
-                        </div>
-                    </div>
-                </div>
+                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
+                                Ir al sitio
+                            </a>
 
-                <div class="card">
-                    <div class="card_img group">
-                        <img src="images/React.png" alt="Simon Dice Game" class="aspect-3/2" />
-                        <div class="revel">
-                            <p class="text-white text-sm font-medium w-4/5">
-                                Juego interactivo en JavaScript basado en el clásico Simon Dice. Practica memoria y
-                                reflejos con esta divertida app.
-                            </p>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-xl font-semibold text-gray-800">Simon Dice</h3>
-                            <div class="flex space-x-3 text-gray-500 text-lg">
-                                <span class="icon-[simple-icons--html5]"></span>
-                                <span class="icon-[simple-icons--css]"></span>
-                                <span class="icon-[simple-icons--javascript]"></span>
-                                <span class="icon-[simple-icons--react]"></span>
-                            </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article
+                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+
+                    <div class="card-img-wrap overflow-hidden">
+                        <img src="images/project-etl.jpg"
+                            class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
+                            alt="ETL API">
+                    </div>
+
+                    <div class="p-5">
+                        <h3 class="text-lg font-semibold">
+                            ETL + REST API
+                        </h3>
+
+                        <p class="mt-2 text-sm text-[color:var(--muted)]">
+                            Pipeline de procesamiento de datos con consultas optimizadas en PostgreSQL.
+                        </p>
+
+                        <div class="mt-4 text-xs text-slate-600">
+                            Node.js · PostgreSQL · Knex · Docker
                         </div>
-                        <p class="text-center text-gray-600 mb-5">Juego interactivo en JavaScript</p>
-                        <div class="flex space-x-4">
+
+                        <div class="mt-5 flex gap-3">
+
                             <a href="#"
-                                class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 rounded-xl text-center hover:bg-gray-300 transition"
-                                type="button">Ver GitHub</a>
+                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
+                                Ver GitHub
+                            </a>
+
                             <a href="#"
-                                class="flex-1 bg-blue-600 text-white font-semibold py-3 rounded-xl text-center hover:bg-blue-700 transition"
-                                type="button">Ver Sitio</a>
+                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
+                                Ir al sitio
+                            </a>
+
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <hr class="my-14">
 
-    <hr class="hr">
+        <!-- ABOUT -->
 
-    <section id="about">
-        <div class="h2">
-            <h2>Sobre mí</h2>
-        </div>
-        <div class="mt-10 max-w-5xl mx-auto w-4/5 text-center md:text-left">
-            <p class="text-lg  leading-relaxed text-gray-700">Soy un desarrollador web autodidacta, enfocado en crear
-                experiencias digitales modernas, accesibles y con alto rendimiento. Actualmente estoy profundizando mis
-                habilidades con un curso completo de desarrollo web, donde domino HTML, CSS, JavaScript, Git, Node.js y
-                PostgreSQL, y utilizo Tailwind CSS y Vite para optimizar mis proyectos.</p>
-            <p class="text-lg leading-relaxed text-gray-700 mt-4">Mi objetivo es integrarme en equipos internacionales
-                como desarrollador full stack y aportar valor real con soluciones eficientes y escalables. Estoy
-                comprometido con el aprendizaje continuo y la mejora constante, explorando áreas como backend avanzado,
-                machine learning y blockchain para crecer profesionalmente.</p>
-        </div>
-    </section>
+        <section id="about">
+            <h2 class="text-2xl font-bold">Sobre mí</h2>
 
-    <hr class="hr">
+            <div class="mt-4 text-[color:var(--muted)] max-w-3xl">
+                <p class="mb-3">
+                    Soy desarrollador backend enfocado en construir APIs robustas y mantenibles.
+                    Disfruto diseñar modelos de datos eficientes, optimizar consultas SQL y resolver problemas de
+                    rendimiento en sistemas backend.
+                </p>
+                <p>
+                    Trabajo con Node.js, Express y PostgreSQL y me interesa especialmente la arquitectura de sistemas,
+                    observabilidad y despliegue en contenedores.
+                </p>
 
-    <section id="Tecnologies" class="">
-        <div class="h2">
-            <h2 class="">Mi stack y flujo de trabajo</h2>
-        </div>
-        <div class="lg:flex mx-auto mt-15 gap-20 w-4/5">
-            <div class="border-2 border-gray-500 rounded-2xl p-5 mb-10">
-                <h3 class="text-3xl font-medium">Frontend</h3>
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3  mt-10 mx-auto gap-1">
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/html.png" alt="html" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                HTML 5
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/css.png" alt="css" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                CSS3
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/js.png" alt="js" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                JavaScript
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/bootstrap.png" alt="bootstrap" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                BOOTSTRAP
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/tailwind.png" alt="tailwind" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                TAILWIND
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/react.png" alt="react" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                REACT
-                            </h3>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="border-2 border-gray-500 rounded-2xl p-5 mb-10">
-                <h3 class="text-3xl font-medium">Backend</h3>
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3  mt-10 mx-auto gap-1">
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/node.png" alt="node" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                NODE
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/express.png" alt="express" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                EXPRESS
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/sql.png" alt="sql" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                SQL
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/postgrestsql.png" alt="postgrestsql" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                PostgreSQL
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/npm.png" alt="npm" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                NPM
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="relative rounded-3xl overflow-hidden group">
-                        <img src="images/skills/html.png" alt="Simon Dice Game" class="m-auto w-auto h-auto p-5" />
-                        <div
-                            class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-80 flex flex-col items-center justify-center transition-opacity duration-400 z-10">
-                            <h3 class="text-white text-2xl font-medium w-4/5">
-                                HTML 5
-                            </h3>
-                        </div>
-                    </div>
-                </div>
+
+        </section>
+
+        <hr class="my-14">
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <h2 class="text-2xl font-bold">Contacto</h2>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+                ¿Necesitas una API o backend escalable? Escríbeme.
+            </p>
+
+            <div class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border">
+                <form action="https://formspree.io/f/mzzgpygv" method="POST" class="space-y-4">
+                    <input name="name" required placeholder="Nombre" class="w-full p-3 border rounded-md">
+                    <input name="_replyto" type="email" required placeholder="Email"
+                        class="w-full p-3 border rounded-md">
+                    <textarea name="message" rows="5" required placeholder="Mensaje"
+                        class="w-full p-3 border rounded-md"></textarea>
+                    <button class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold">
+                        Enviar mensaje
+                    </button>
+                </form>
             </div>
-        </div>
+        </section>
+    </main>
 
-        </div>
-    </section>
-
-    <hr class="hr">
-
-    <section id="contacto" class="md:w-3/5 mx-auto">
-        <div class="h2">
-            <h2>Contacto</h2>
-        </div>
-        <div
-            class="max-w-[1400px] mx-auto mt-15 border-2 border-b-slate-800 rounded-2xl p-10 text-azulOscuro bg-naranja/20 w-4/5">
-            <form action="https://formspree.io/f/mzzgpygv" method="POST" class="space-y-6">
-                <div>
-                    <label for="name" class="block mb-2 text-sm font-medium">Nombre</label>
-                    <input type="text" id="name" name="name" required
-                        class="w-full p-3 rounded bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-naranja text-white" />
-                </div>
-                <div>
-                    <label for="email" class="block mb-2 text-sm font-medium">Email</label>
-                    <input type="email" id="email" name="_replyto" required
-                        class="w-full p-3 rounded bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-naranja text-white" />
-                </div>
-                <div>
-                    <label for="message" class="block mb-2 text-sm font-medium">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required
-                        class="w-full p-3 rounded bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-naranja text-white"></textarea>
-                </div>
-                <button type="submit"
-                    class="bg-cyan-500 hover:bg-cyan-600 transition-colors px-6 py-3 rounded text-white font-semibold w-full">
-                    Enviar mensaje
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="bg-slate-950 text-slate-400 text-center py-6 mt-16 text-sm">
-        <p>&copy; 2025 Danilo. Todos los derechos reservados.</p>
-        <div class="mt-2 space-x-4">
-            <a href="https://github.com/tuusuario" target="_blank" class="hover:text-white">GitHub</a>
-            <a href="daniloaces5@gmail.com" class="hover:text-white">Email</a>
-            <a href="#contacto" class="hover:text-white">Contacto</a>
+    <footer class="border-t bg-white/50">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-sm text-slate-600">
+            <div>© 2025 Danilo</div>
+            <div class="flex gap-4">
+                <a href="#">GitHub</a>
+                <a href="mailto:daniloaces5@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 
-
-
-    <script type="module" src="/src/script.js"></script>
+    <script src="src/script.js"></script>
 </body>
 
 </html>

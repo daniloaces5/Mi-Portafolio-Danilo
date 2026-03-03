@@ -1,39 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
-@import "tailwindcss";
+/* =========================
+   THEME
+========================= */
 
 @theme {
-  --color-crema: #f5e4ce;
-  --color-azulOscuro: #1c2b38;
+  --color-crema: #fcfaf2;
+  --color-azulOscuro: #1e293b;
   --color-naranja: #f97316;
   --color-amarillo: #f7df1e;
   --color-rojo: #de4c36;
   --color-gris: #2f3e46;
   --color-negro: #0d1117;
+
+  --font-anton: "Anton", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
-@layer components {
-  .open span:nth-child(1) {
-    @apply translate-y-[12px] rotate-45;
-  }
-  .open span:nth-child(2) {
-    @apply opacity-0;
-  }
-  .open span:nth-child(3) {
-    @apply -translate-y-[10px] -rotate-45;
-  }
-}
-.open span:nth-child(1) {
-  @apply bg-naranja;
-}
-.open span:nth-child(3) {
-  @apply bg-naranja;
-}
-
-@theme {
-  --font-anton: "Anton", sans-serif; 
-}
+/* =========================
+   BASE
+========================= */
 
 body {
   min-width: 520px;
@@ -45,31 +33,106 @@ body {
   }
 }
 
+/* =========================
+   COMPONENTS
+========================= */
 
-header nav a {
-  @apply mx-5 hover:text-naranja;
+@layer components {
+
+  header nav a {
+    @apply mx-5 hover:text-naranja transition;
+  }
+
+  .hr {
+    @apply my-20 text-orange-800/20;
+  }
+
+  .h2 {
+    @apply md:w-5/7 mx-auto max-w-[1000px];
+  }
+
+  h2 {
+    @apply text-4xl font-bold mb-10 flex justify-center md:justify-start;
+  }
+
+  #projects .card {
+    @apply mx-auto bg-white rounded-3xl shadow-lg overflow-hidden mb-16;
+  }
+
+  #projects .card_img {
+    @apply relative rounded-t-3xl overflow-hidden;
+  }
+
+  #projects .revel {
+    @apply absolute inset-0 bg-black/80 opacity-0 
+           group-hover:opacity-100 
+           flex flex-col items-center justify-center 
+           transition-opacity duration-300 z-10;
+  }
+
+  /* Hamburguesa animación */
+
+  .open span:nth-child(1) {
+    @apply translate-y-[8px] rotate-45 bg-naranja;
+  }
+
+  .open span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .open span:nth-child(3) {
+    @apply -translate-y-[8px] -rotate-45 bg-naranja;
+  }
+
 }
 
-.hr{
-  @apply my-20 text-orange-800/20
+/* =========================
+   MOBILE MENU
+========================= */
+
+#mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
-.h2{
-  @apply md:w-5/7 mx-auto max-w-[1000px]
+/* =========================
+   UTILITIES EXTRA
+========================= */
+
+:root {
+  --accent: #ff7a3d;
+  --muted: #6b7280;
+  --bg: #f7f3ee;
+  --card: #ffffff;
 }
 
-h2{
-    @apply text-4xl font-bold mb-10 flex justify-center md:justify-start
+.focus-ring:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-#projects .card {
-  @apply mx-auto bg-white rounded-3xl shadow-lg overflow-hidden mb-16
+.card-img-wrap {
+  overflow: hidden;
+  border-radius: .75rem;
 }
 
-#projects .card_img {
-  @apply relative rounded-t-3xl overflow-hidden
+.card-img-wrap img {
+  transition: transform .6s ease;
 }
 
-#projects .revel {
-  @apply absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-400 z-10
+.card-img-wrap:hover img {
+  transform: scale(1.06);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

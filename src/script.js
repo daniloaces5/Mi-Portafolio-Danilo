@@ -1,25 +1,29 @@
-console.log("Index cargado correctamente");
-import "./style.css";
+(function () {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("close-menu");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  const menuLinks = menu.querySelectorAll("a");
+  function openMenu() {
+    mobileMenu.style.opacity = "1";
+    mobileMenu.style.pointerEvents = "auto";
+    menuBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    mobileMenu.style.opacity = "0";
+    mobileMenu.style.pointerEvents = "none";
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
 
-  const toggleMenu = () => {
-    btn.classList.toggle("open");
-    menu.classList.toggle("opacity-0");
-    menu.classList.toggle("pointer-events-none");
-  };
+  menuBtn.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
 
-  btn.addEventListener("click", toggleMenu);
-
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      // Solo cerrar si el menú está abierto
-      if (btn.classList.contains("open")) {
-        toggleMenu();
-      }
-    });
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) closeMenu();
   });
-});
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+})();
