@@ -8,7 +8,7 @@
     <meta name="description"
         content="Danilo — Backend Developer especializado en Node.js, Express, PostgreSQL y diseño de APIs escalables. Proyectos 2025." />
     <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="src/style.css">
+    <link href="/src/style.css" rel="stylesheet">
 </head>
 
 <body class="bg-[color:var(--bg)] text-slate-900 antialiased">
@@ -18,9 +18,9 @@
         </a>
 
         <nav class="hidden md:flex gap-5 text-md font-bold text-slate-700">
-            <a href="#about" class="hover:text-slate-900 transition">Sobre</a>
-            <a href="#projects" class="hover:text-slate-900 transition">Proyectos</a>
-            <a href="#contact" class="hover:text-slate-900 transition">Contacto</a>
+            <a href="#about" class="hover:text-naranja transition">Sobre</a>
+            <a href="#projects" class="hover:text-naranja transition">Proyectos</a>
+            <a href="#contact" class="hover:text-naranja transition">Contacto</a>
         </nav>
 
         <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu"
@@ -66,7 +66,7 @@
                 </p>
 
                 <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="#projects" class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold">
+                    <a href="#projects" class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-500">
                         Ver proyectos
                     </a>
 
@@ -93,7 +93,7 @@
 
         </section>
 
-        <hr class="my-14">
+        <hr class="my-14 hr">
 
         <section id="projects">
             <h2 class="text-2xl font-bold">Proyectos</h2>
@@ -103,7 +103,7 @@
             <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                 <article
-                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    class="bg-white rounded-2xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300">
                     <div class="card-img-wrap overflow-hidden">
                         <img src="images/Barber-Project.jpg"
                             class="w-full h-44 object-contain transition-transform duration-300 hover:scale-105"
@@ -134,7 +134,7 @@
                 </article>
 
                 <article
-                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2  border-gray-300">
 
                     <div class="card-img-wrap overflow-hidden">
                         <img src="images/Game Simon.png"
@@ -172,7 +172,7 @@
                 </article>
 
                 <article
-                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2  border-gray-300">
 
                     <div class="card-img-wrap overflow-hidden">
                         <img src="images/project-etl.jpg"
@@ -211,7 +211,7 @@
             </div>
         </section>
 
-        <hr class="my-14">
+        <hr class="my-14 hr">
 
 
         <section id="about">
@@ -232,7 +232,7 @@
 
         </section>
 
-        <hr class="my-14">
+        <hr class="my-14 hr">
 
         <section id="contact">
             <h2 class="text-2xl font-bold">Contacto</h2>
@@ -240,13 +240,13 @@
                 ¿Necesitas una API o backend escalable? Escríbeme.
             </p>
 
-            <div class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border">
+            <div class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border border-gray-300">
                 <form action="https://formspree.io/f/mzzgpygv" method="POST" class="space-y-4">
-                    <input name="name" required placeholder="Nombre" class="w-full p-3 border rounded-md">
+                    <input name="name" required placeholder="Nombre" class="w-full p-3 border border-gray-300 rounded-md">
                     <input name="_replyto" type="email" required placeholder="Email"
-                        class="w-full p-3 border rounded-md">
+                        class="w-full p-3 border border-gray-300 rounded-md">
                     <textarea name="message" rows="5" required placeholder="Mensaje"
-                        class="w-full p-3 border rounded-md"></textarea>
+                        class="w-full p-3 border border-gray-300 rounded-md"></textarea>
                     <button class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold">
                         Enviar mensaje
                     </button>
@@ -255,7 +255,7 @@
         </section>
     </main>
 
-    <footer class="border-t bg-white/50">
+    <footer class="border-t  border-gray-300 bg-white/50">
         <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-sm text-slate-600">
             <div>&copy; 2025 Danilo</div>
             <div class="flex gap-4">

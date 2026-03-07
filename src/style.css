@@ -44,7 +44,7 @@ body {
   }
 
   .hr {
-    @apply my-20 text-orange-800/20;
+    @apply my-20 text-gray-800/40;
   }
 
   .h2 {
