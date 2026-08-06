@@ -1,271 +1,351 @@
 <!doctype html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Danilo — Backend Developer Node.js · APIs · PostgreSQL</title>
-    <meta name="description"
-        content="Danilo — Backend Developer especializado en Node.js, Express, PostgreSQL y diseño de APIs escalables. Proyectos 2025." />
-    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
-    <link href="/src/style.css" rel="stylesheet">
-</head>
+    <meta
+      name="description"
+      content="Danilo — Backend Developer especializado en Node.js, Express, PostgreSQL y diseño de APIs escalables. Proyectos 2025."
+    />
+    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon" />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
 
-<body class="bg-[color:var(--bg)] text-slate-900 antialiased">
-    <header class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-        <a href="#" class="text-xl font-extrabold tracking-tight">
-            DANILO<span class="text-[color:var(--accent)]">·BACKEND</span>
-        </a>
+  <body class="bg-[color:var(--bg)] text-slate-900 antialiased">
+    <header
+      class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between"
+    >
+      <a href="#" class="text-xl font-extrabold tracking-tight">
+        DANILO<span class="text-[color:var(--accent)]">·BACKEND</span>
+      </a>
 
-        <nav class="hidden md:flex gap-5 text-md font-bold text-slate-700">
-            <a href="#about" class="hover:text-naranja transition">Sobre</a>
-            <a href="#projects" class="hover:text-naranja transition">Proyectos</a>
-            <a href="#contact" class="hover:text-naranja transition">Contacto</a>
-        </nav>
+      <nav class="hidden md:flex gap-5 text-md font-bold text-slate-700">
+        <a href="#about" class="hover:text-naranja transition">Sobre</a>
+        <a href="#projects" class="hover:text-naranja transition">Proyectos</a>
+        <a href="#contact" class="hover:text-naranja transition">Contacto</a>
+      </nav>
 
-        <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu"
-            class="md:hidden p-2 rounded focus-ring">
-            <span class="sr-only">Abrir menú</span>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+      <button
+        id="menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="md:hidden p-2 rounded focus-ring"
+      >
+        <span class="sr-only">Abrir menú</span>
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
     </header>
 
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity">
-        <div class="absolute right-6 top-6">
-            <button id="close-menu" class="p-2 rounded bg-white/10 text-white focus-ring">
-                <span class="sr-only">Cerrar menú</span>
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <nav class="h-full flex flex-col items-center justify-center gap-8 text-white text-2xl">
-            <a href="#about" class="hover:text-[color:var(--accent)] transition">Sobre</a>
-            <a href="#projects" class="hover:text-[color:var(--accent)] transition">Proyectos</a>
-            <a href="#contact" class="hover:text-[color:var(--accent)] transition">Contacto</a>
-        </nav>
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity"
+    >
+      <div class="absolute right-6 top-6">
+        <button
+          id="close-menu"
+          class="p-2 rounded bg-white/10 text-white focus-ring"
+        >
+          <span class="sr-only">Cerrar menú</span>
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav
+        class="h-full flex flex-col items-center justify-center gap-8 text-white text-2xl"
+      >
+        <a href="#about" class="hover:text-[color:var(--accent)] transition"
+          >Sobre</a
+        >
+        <a href="#projects" class="hover:text-[color:var(--accent)] transition"
+          >Proyectos</a
+        >
+        <a href="#contact" class="hover:text-[color:var(--accent)] transition"
+          >Contacto</a
+        >
+      </nav>
     </div>
 
     <main class="max-w-5xl mx-auto px-6 pb-16">
+      <section class="mt-12 grid md:grid-cols-3 gap-10 items-center">
+        <div class="md:col-span-2">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Construyo sistemas backend escalables y mantenibles
+          </h1>
 
-        <section class="mt-12 grid md:grid-cols-3 gap-10 items-center">
+          <p class="mt-5 text-base text-[color:var(--muted)] max-w-2xl">
+            Backend Developer especializado en Node.js, Express y PostgreSQL.
+            Construyo APIs escalables con arquitectura limpia y consultas SQL
+            optimizadas. Cuento con experiencia en frontend básico para
+            integración full-stack y despliegue de aplicaciones en servidores en
+            internet.
+          </p>
 
-            <div class="md:col-span-2">
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-500"
+            >
+              Ver proyectos
+            </a>
 
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                    Construyo sistemas backend escalables y mantenibles
-                </h1>
+            <a
+              href="#contact"
+              class="border border-slate-300 px-4 py-2 rounded-md hover:bg-slate-50"
+            >
+              Contactar
+            </a>
+          </div>
 
-                <p class="mt-5 text-base text-[color:var(--muted)] max-w-2xl">
-                    Backend Developer especializado en Node.js, Express y PostgreSQL. Construyo APIs escalables con
-                    arquitectura limpia y consultas SQL optimizadas. Cuento con experiencia en frontend básico para
-                    integración full-stack y despliegue de aplicaciones en servidores en internet.
-                </p>
+          <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-600">
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">Node.js</li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">Express</li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">PostgreSQL</li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">REST APIs</li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">TailwindCSS</li>
+          </ul>
+        </div>
 
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="#projects" class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-500">
-                        Ver proyectos
-                    </a>
+        <div class="flex justify-center md:justify-end">
+          <img
+            src="images/Yo.png"
+            alt="Danilo Backend Developer"
+            class="w-52 h-52 rounded-full object-cover shadow-xl"
+          />
+        </div>
+      </section>
 
-                    <a href="#contact" class="border border-slate-300 px-4 py-2 rounded-md hover:bg-slate-50">
-                        Contactar
-                    </a>
+      <hr class="my-14 hr" />
 
-                </div>
-
-                <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-600">
-                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">Node.js</li>
-                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">Express</li>
-                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">PostgreSQL</li>
-                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">REST APIs</li>
-                    <li class="px-3 py-1 bg-white rounded-md shadow-sm">TailwindCSS</li>
-                </ul>
-
+      <section id="projects">
+        <h2 class="text-2xl font-bold">Proyectos</h2>
+        <p class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl">
+          Proyectos que muestran diseño de APIs, modelado de datos y
+          arquitectura backend.
+        </p>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article
+            class="bg-white rounded-2xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
+          >
+            <div class="card-img-wrap overflow-hidden">
+              <img
+                src="images/Barber-Project.jpg"
+                class="w-full h-44 object-contain transition-transform duration-300 hover:scale-105"
+                alt="Proyecto Barbería"
+              />
             </div>
 
-            <div class="flex justify-center md:justify-end">
-                <img src="images/Yo.png" alt="Danilo Backend Developer"
-                    class="w-52 h-52 rounded-full object-cover shadow-xl">
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Proyecto de Barbería</h3>
+              <p class="mt-2 text-sm text-[color:var(--muted)]">
+                Sistema completo de barbería con registro, login, edición y
+                control de roles.
+              </p>
+              <div class="mt-4 text-xs text-slate-600">
+                Node.js · Express · PostgreSQL · JWT
+              </div>
+              <div class="mt-5 flex gap-3">
+                <a
+                  href="https://github.com/daniloaces5/Barber-Project"
+                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                >
+                  Ver GitHub
+                </a>
+                <a
+                  href="https://barber-project-w76r.onrender.com"
+                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
+                >
+                  Ir al sitio
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
+          >
+            <div class="card-img-wrap overflow-hidden">
+              <img
+                src="images/Game Simon.png"
+                class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
+                alt="Simon Dice"
+              />
             </div>
 
-        </section>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Simon Dice</h3>
 
-        <hr class="my-14 hr">
+              <p class="mt-2 text-sm text-[color:var(--muted)]">
+                Juego interactivo en JavaScript basado en el clásico Simon Dice.
+              </p>
 
-        <section id="projects">
-            <h2 class="text-2xl font-bold">Proyectos</h2>
-            <p class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl">
-                Proyectos que muestran diseño de APIs, modelado de datos y arquitectura backend.
-            </p>
-            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div class="mt-4 text-xs text-slate-600">
+                JavaScript · HTML · CSS · TailwindCSS
+              </div>
 
-                <article
-                    class="bg-white rounded-2xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300">
-                    <div class="card-img-wrap overflow-hidden">
-                        <img src="images/Barber-Project.jpg"
-                            class="w-full h-44 object-contain transition-transform duration-300 hover:scale-105"
-                            alt="Proyecto Barbería">
-                    </div>
+              <div class="mt-5 flex gap-3">
+                <a
+                  href="https://github.com/daniloaces5/SimonDice"
+                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                >
+                  Ver GitHub
+                </a>
 
-                    <div class="p-5">
-                        <h3 class="text-lg font-semibold">
-                            Proyecto de Barbería
-                        </h3>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Sistema completo de barbería con registro, login, edición y control de roles.
-                        </p>
-                        <div class="mt-4 text-xs text-slate-600">
-                            Node.js · Express · PostgreSQL · JWT
-                        </div>
-                        <div class="mt-5 flex gap-3">
-                            <a href="https://github.com/daniloaces5/Barber-Project"
-                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
-                                Ver GitHub
-                            </a>
-                            <a href="https://barber-project-w76r.onrender.com"
-                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
-                                Ir al sitio
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2  border-gray-300">
-
-                    <div class="card-img-wrap overflow-hidden">
-                        <img src="images/Game Simon.png"
-                            class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
-                            alt="Simon Dice">
-                    </div>
-
-                    <div class="p-5">
-                        <h3 class="text-lg font-semibold">
-                            Simon Dice
-                        </h3>
-
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Juego interactivo en JavaScript basado en el clásico Simon Dice.
-                        </p>
-
-                        <div class="mt-4 text-xs text-slate-600">
-                            JavaScript · HTML · CSS · TailwindCSS
-                        </div>
-
-                        <div class="mt-5 flex gap-3">
-
-                            <a href="https://github.com/daniloaces5/SimonDice"
-                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
-                                Ver GitHub
-                            </a>
-
-                            <a href="https://simon-dice-seven.vercel.app/"
-                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
-                                Ir al sitio
-                            </a>
-
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2  border-gray-300">
-
-                    <div class="card-img-wrap overflow-hidden">
-                        <img src="images/project-etl.jpg"
-                            class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
-                            alt="ETL API">
-                    </div>
-
-                    <div class="p-5">
-                        <h3 class="text-lg font-semibold">
-                            ETL + REST API
-                        </h3>
-
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Pipeline de procesamiento de datos con consultas optimizadas en PostgreSQL.
-                        </p>
-
-                        <div class="mt-4 text-xs text-slate-600">
-                            Node.js · PostgreSQL · Knex · Docker
-                        </div>
-
-                        <div class="mt-5 flex gap-3">
-
-                            <a href="#"
-                                class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900">
-                                Ver GitHub
-                            </a>
-
-                            <a href="#"
-                                class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105">
-                                Ir al sitio
-                            </a>
-
-                        </div>
-                    </div>
-                </article>
+                <a
+                  href="https://simon-dice-seven.vercel.app/"
+                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
+                >
+                  Ir al sitio
+                </a>
+              </div>
             </div>
-        </section>
+          </article>
 
-        <hr class="my-14 hr">
-
-
-        <section id="about">
-            <h2 class="text-2xl font-bold">Sobre mí</h2>
-
-            <div class="mt-4 text-[color:var(--muted)] max-w-3xl">
-                <p class="mb-3">
-                    Soy desarrollador backend enfocado en construir APIs robustas y mantenibles.
-                    Disfruto diseñar modelos de datos eficientes, optimizar consultas SQL y resolver problemas de
-                    rendimiento en sistemas backend.
-                </p>
-                <p>
-                    Trabajo con Node.js, Express y PostgreSQL y me interesa especialmente la arquitectura de sistemas,
-                    observabilidad y despliegue en internet.
-                </p>
-
+          <article
+            class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
+          >
+            <div class="card-img-wrap overflow-hidden">
+              <img
+                src="images/Orquiteck.png"
+                class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
+                alt="Orquiteck"
+              />
             </div>
 
-        </section>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">Orquiteck</h3>
 
-        <hr class="my-14 hr">
+              <p class="mt-2 text-sm text-[color:var(--muted)]">
+                Plataforma de automatización con IA para WhatsApp que optimiza la atención al cliente y los procesos empresariales.
+              </p>
 
-        <section id="contact">
-            <h2 class="text-2xl font-bold">Contacto</h2>
-            <p class="mt-2 text-sm text-[color:var(--muted)]">
-                ¿Necesitas una API o backend escalable? Escríbeme.
-            </p>
+              <div class="mt-4 text-xs text-slate-600">
+                HTML · JavaScript · TailwindCSS · PostgreSQL · N8N
+              </div>
 
-            <div class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border border-gray-300">
-                <form action="https://formspree.io/f/mzzgpygv" method="POST" class="space-y-4">
-                    <input name="name" required placeholder="Nombre" class="w-full p-3 border border-gray-300 rounded-md">
-                    <input name="_replyto" type="email" required placeholder="Email"
-                        class="w-full p-3 border border-gray-300 rounded-md">
-                    <textarea name="message" rows="5" required placeholder="Mensaje"
-                        class="w-full p-3 border border-gray-300 rounded-md"></textarea>
-                    <button class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold">
-                        Enviar mensaje
-                    </button>
-                </form>
+              <div class="mt-5 flex gap-3">
+                <a
+                  href="https://github.com/daniloaces5/Orquiteck"
+                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                >
+                  Ver GitHub
+                </a>
+
+                <a
+                  href="https://orquiteck.vercel.app/"
+                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
+                >
+                  Ver sitio
+                </a>
+              </div>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
+
+      <hr class="my-14 hr" />
+
+      <section id="about">
+        <h2 class="text-2xl font-bold">Sobre mí</h2>
+
+        <div class="mt-4 text-[color:var(--muted)] max-w-3xl">
+          <p class="mb-3">
+            Soy desarrollador backend enfocado en construir APIs robustas y
+            mantenibles. Disfruto diseñar modelos de datos eficientes, optimizar
+            consultas SQL y resolver problemas de rendimiento en sistemas
+            backend.
+          </p>
+          <p>
+            Trabajo con Node.js, Express y PostgreSQL y me interesa
+            especialmente la arquitectura de sistemas, observabilidad y
+            despliegue en internet.
+          </p>
+        </div>
+      </section>
+
+      <hr class="my-14 hr" />
+
+      <section id="contact">
+        <h2 class="text-2xl font-bold">Contacto</h2>
+        <p class="mt-2 text-sm text-[color:var(--muted)]">
+          ¿Necesitas una API o backend escalable? Escríbeme.
+        </p>
+
+        <div
+          class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border border-gray-300"
+        >
+          <form
+            action="https://formspree.io/f/mzzgpygv"
+            method="POST"
+            class="space-y-4"
+          >
+            <input
+              name="name"
+              required
+              placeholder="Nombre"
+              class="w-full p-3 border border-gray-300 rounded-md"
+            />
+            <input
+              name="_replyto"
+              type="email"
+              required
+              placeholder="Email"
+              class="w-full p-3 border border-gray-300 rounded-md"
+            />
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder="Mensaje"
+              class="w-full p-3 border border-gray-300 rounded-md"
+            ></textarea>
+            <button
+              class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold"
+            >
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <footer class="border-t  border-gray-300 bg-white/50">
-        <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-sm text-slate-600">
-            <div>&copy; 2025 Danilo</div>
-            <div class="flex gap-4">
-                <a href="https://github.com/daniloaces5">GitHub</a>
-                <a href="mailto:daniloaces5@gmail.com">Email</a>
-            </div>
+    <footer class="border-t border-gray-300 bg-white/50">
+      <div
+        class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-sm text-slate-600"
+      >
+        <div>&copy; 2025 Danilo</div>
+        <div class="flex gap-4">
+          <a href="https://github.com/daniloaces5">GitHub</a>
+          <a href="mailto:daniloaces5@gmail.com">Email</a>
         </div>
+      </div>
     </footer>
 
     <script type="module" src="src/script.js"></script>
-</body>
-
+  </body>
 </html>
