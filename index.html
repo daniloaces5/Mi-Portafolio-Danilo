@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="pt-br" id="html-root">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Danilo — Backend Developer Node.js · APIs · PostgreSQL</title>
+    <title id="page-title">
+      Danilo — Automação com IA · WhatsApp · Backend Node.js
+    </title>
     <meta
       name="description"
-      content="Danilo — Backend Developer especializado en Node.js, Express, PostgreSQL y diseño de APIs escalables. Proyectos 2025."
+      id="page-description"
+      content="Danilo — Desenvolvedor especializado em automação com IA, bots de WhatsApp e backends com Node.js. Disponível para novos projetos."
     />
     <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon" />
     <link href="/src/style.css" rel="stylesheet" />
@@ -17,14 +20,58 @@
       class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between"
     >
       <a href="#" class="text-xl font-extrabold tracking-tight">
-        DANILO<span class="text-[color:var(--accent)]">·BACKEND</span>
+        DANILO<span class="text-[color:var(--accent)]" data-i18n="logo_suffix"
+          >·AUTOMAÇÃO</span
+        >
       </a>
 
-      <nav class="hidden md:flex gap-5 text-md font-bold text-slate-700">
-        <a href="#about" class="hover:text-naranja transition">Sobre</a>
-        <a href="#projects" class="hover:text-naranja transition">Proyectos</a>
-        <a href="#contact" class="hover:text-naranja transition">Contacto</a>
-      </nav>
+      <div class="hidden md:flex items-center gap-6">
+        <nav class="flex gap-5 text-md font-bold text-slate-700">
+          <a
+            href="#projects"
+            class="hover:text-naranja transition"
+            data-i18n="nav_projects"
+            >Projetos</a
+          >
+          <a
+            href="#services"
+            class="hover:text-naranja transition"
+            data-i18n="nav_services"
+            >Serviços</a
+          >
+          <a
+            href="#about"
+            class="hover:text-naranja transition"
+            data-i18n="nav_about"
+            >Sobre</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-naranja transition"
+            data-i18n="nav_contact"
+            >Contato</a
+          >
+        </nav>
+
+        <div
+          class="flex gap-1 border border-slate-300 rounded-md overflow-hidden text-sm font-semibold"
+        >
+          <button
+            onclick="setLang('pt')"
+            data-lang-btn="pt"
+            class="px-3 py-1 transition"
+          >
+            PT
+          </button>
+          <button
+            onclick="setLang('es')"
+            data-lang-btn="es"
+            class="px-3 py-1 transition"
+          >
+            ES
+          </button>
+        </div>
+      </div>
 
       <button
         id="menu-btn"
@@ -32,7 +79,7 @@
         aria-controls="mobile-menu"
         class="md:hidden p-2 rounded focus-ring"
       >
-        <span class="sr-only">Abrir menú</span>
+        <span class="sr-only">Abrir menu</span>
         <svg
           class="w-6 h-6"
           fill="none"
@@ -59,7 +106,7 @@
           id="close-menu"
           class="p-2 rounded bg-white/10 text-white focus-ring"
         >
-          <span class="sr-only">Cerrar menú</span>
+          <span class="sr-only">Fechar menu</span>
           <svg
             class="w-6 h-6"
             fill="none"
@@ -79,62 +126,119 @@
       <nav
         class="h-full flex flex-col items-center justify-center gap-8 text-white text-2xl"
       >
-        <a href="#about" class="hover:text-[color:var(--accent)] transition"
+        <a
+          href="#projects"
+          class="hover:text-[color:var(--accent)] transition"
+          data-i18n="nav_projects"
+          >Projetos</a
+        >
+        <a
+          href="#services"
+          class="hover:text-[color:var(--accent)] transition"
+          data-i18n="nav_services"
+          >Serviços</a
+        >
+        <a
+          href="#about"
+          class="hover:text-[color:var(--accent)] transition"
+          data-i18n="nav_about"
           >Sobre</a
         >
-        <a href="#projects" class="hover:text-[color:var(--accent)] transition"
-          >Proyectos</a
+        <a
+          href="#contact"
+          class="hover:text-[color:var(--accent)] transition"
+          data-i18n="nav_contact"
+          >Contato</a
         >
-        <a href="#contact" class="hover:text-[color:var(--accent)] transition"
-          >Contacto</a
+
+        <div
+          class="flex gap-1 border border-white/40 rounded-md overflow-hidden text-base font-semibold mt-4"
         >
+          <button
+            onclick="setLang('pt')"
+            data-lang-btn="pt"
+            class="px-4 py-2 transition"
+          >
+            PT
+          </button>
+          <button
+            onclick="setLang('es')"
+            data-lang-btn="es"
+            class="px-4 py-2 transition"
+          >
+            ES
+          </button>
+        </div>
       </nav>
     </div>
 
     <main class="max-w-5xl mx-auto px-6 pb-16">
       <section class="mt-12 grid md:grid-cols-3 gap-10 items-center">
         <div class="md:col-span-2">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-            Construyo sistemas backend escalables y mantenibles
+          <div
+            class="inline-flex items-center gap-2 mb-4 text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full"
+          >
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span data-i18n="badge_available"
+              >Disponível para novos projetos</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl md:text-5xl font-extrabold leading-tight"
+            data-i18n="hero_h1"
+          >
+            Automatizo atendimento e processos com IA para pequenos negócios
           </h1>
 
-          <p class="mt-5 text-base text-[color:var(--muted)] max-w-2xl">
-            Backend Developer especializado en Node.js, Express y PostgreSQL.
-            Construyo APIs escalables con arquitectura limpia y consultas SQL
-            optimizadas. Cuento con experiencia en frontend básico para
-            integración full-stack y despliegue de aplicaciones en servidores en
-            internet.
+          <p
+            class="mt-5 text-base text-[color:var(--muted)] max-w-2xl"
+            data-i18n="hero_p"
+          >
+            Desenvolvedor backend especializado em automações com WhatsApp, n8n
+            e IA. Construo bots de atendimento, fluxos automatizados e
+            integrações que economizam tempo real no dia a dia do seu negócio —
+            além de APIs e backends sob medida com Node.js e PostgreSQL.
           </p>
 
           <div class="mt-6 flex flex-wrap gap-3">
             <a
-              href="#projects"
+              href="https://wa.me/55SEUNUMEROAQUI"
               class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-500"
+              data-i18n="cta_whatsapp"
             >
-              Ver proyectos
+              Falar no WhatsApp
             </a>
 
             <a
-              href="#contact"
+              href="#projects"
               class="border border-slate-300 px-4 py-2 rounded-md hover:bg-slate-50"
+              data-i18n="cta_projects"
             >
-              Contactar
+              Ver projetos
             </a>
           </div>
 
           <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-600">
+            <li
+              class="px-3 py-1 bg-white rounded-md shadow-sm"
+              data-i18n="tag_ia"
+            >
+              Automação com IA
+            </li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">
+              WhatsApp API
+            </li>
+            <li class="px-3 py-1 bg-white rounded-md shadow-sm">n8n</li>
             <li class="px-3 py-1 bg-white rounded-md shadow-sm">Node.js</li>
-            <li class="px-3 py-1 bg-white rounded-md shadow-sm">Express</li>
             <li class="px-3 py-1 bg-white rounded-md shadow-sm">PostgreSQL</li>
-            <li class="px-3 py-1 bg-white rounded-md shadow-sm">REST APIs</li>
-            <li class="px-3 py-1 bg-white rounded-md shadow-sm">TailwindCSS</li>
           </ul>
         </div>
 
         <div class="flex justify-center md:justify-end">
           <img
             src="images/Yo.png"
-            alt="Danilo Backend Developer"
+            alt="Danilo"
             class="w-52 h-52 rounded-full object-cover shadow-xl"
           />
         </div>
@@ -143,28 +247,89 @@
       <hr class="my-14 hr" />
 
       <section id="projects">
-        <h2 class="text-2xl font-bold">Proyectos</h2>
-        <p class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl">
-          Proyectos que muestran diseño de APIs, modelado de datos y
-          arquitectura backend.
+        <h2 class="text-2xl font-bold" data-i18n="projects_h2">Projetos</h2>
+        <p
+          class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl"
+          data-i18n="projects_p"
+        >
+          Projetos que mostram automação de atendimento, arquitetura backend e
+          modelagem de dados.
         </p>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
           <article
             class="bg-white rounded-2xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
           >
-            <div class="card-img-wrap overflow-hidden">
+            <div class="card-img-wrap group overflow-hidden">
               <img
-                src="images/Barber-Project.jpg"
-                class="w-full h-44 object-contain transition-transform duration-300 hover:scale-105"
-                alt="Proyecto Barbería"
+                src="images/Orquiteck.png"
+                class="w-full aspect-[4/3] object-cover bg-slate-100 transition-transform duration-300 hover:scale-105"
+                alt="Orquiteck"
               />
+              <div class="revel">
+                <span data-i18n="cta_view_project">Ver projeto</span>
+              </div>
             </div>
 
             <div class="p-5">
-              <h3 class="text-lg font-semibold">Proyecto de Barbería</h3>
-              <p class="mt-2 text-sm text-[color:var(--muted)]">
-                Sistema completo de barbería con registro, login, edición y
-                control de roles.
+              <h3 class="text-lg font-semibold" data-i18n="orq_title">
+                Orquiteck — Automação de atendimento com IA
+              </h3>
+              <p
+                class="mt-2 text-sm text-[color:var(--muted)]"
+                data-i18n="orq_desc"
+              >
+                Projeto demonstrativo: sistema de automação multicanal
+                (WhatsApp, Telegram e site) que conduz conversas de atendimento
+                usando IA, com fluxos independentes por canal convergindo em um
+                mesmo motor de decisão central.
+              </p>
+              <div class="mt-4 text-xs text-slate-600">
+                n8n · Evolution API · PostgreSQL · IA
+              </div>
+              <div class="mt-5 flex gap-3">
+                <a
+                  href="https://github.com/daniloaces5/Orquiteck"
+                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                  data-i18n="btn_github"
+                >
+                  Ver GitHub
+                </a>
+                <a
+                  href="https://orquiteck.vercel.app/"
+                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
+                  data-i18n="btn_site_orq"
+                >
+                  Ver site
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-white rounded-2xl shadow-md border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
+          >
+            <div class="card-img-wrap group overflow-hidden">
+              <img
+                src="images/Barber-Project.jpg"
+                class="w-full aspect-[4/3] object-cover bg-slate-100 transition-transform duration-300 hover:scale-105"
+                alt="Barbearia"
+              />
+              <div class="revel">
+                <span data-i18n="cta_view_project">Ver projeto</span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-lg font-semibold" data-i18n="barb_title">
+                Sistema de Barbearia — Backend completo
+              </h3>
+              <p
+                class="mt-2 text-sm text-[color:var(--muted)]"
+                data-i18n="barb_desc"
+              >
+                Sistema com cadastro, login, edição de perfil e controle de
+                papéis (admin/cliente), com autenticação JWT e arquitetura
+                RESTful.
               </p>
               <div class="mt-4 text-xs text-slate-600">
                 Node.js · Express · PostgreSQL · JWT
@@ -173,94 +338,16 @@
                 <a
                   href="https://github.com/daniloaces5/Barber-Project"
                   class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                  data-i18n="btn_github"
                 >
                   Ver GitHub
                 </a>
                 <a
                   href="https://barber-project-w76r.onrender.com"
                   class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
+                  data-i18n="btn_site_barb"
                 >
-                  Ir al sitio
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article
-            class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
-          >
-            <div class="card-img-wrap overflow-hidden">
-              <img
-                src="images/Game Simon.png"
-                class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
-                alt="Simon Dice"
-              />
-            </div>
-
-            <div class="p-5">
-              <h3 class="text-lg font-semibold">Simon Dice</h3>
-
-              <p class="mt-2 text-sm text-[color:var(--muted)]">
-                Juego interactivo en JavaScript basado en el clásico Simon Dice.
-              </p>
-
-              <div class="mt-4 text-xs text-slate-600">
-                JavaScript · HTML · CSS · TailwindCSS
-              </div>
-
-              <div class="mt-5 flex gap-3">
-                <a
-                  href="https://github.com/daniloaces5/SimonDice"
-                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
-                >
-                  Ver GitHub
-                </a>
-
-                <a
-                  href="https://simon-dice-seven.vercel.app/"
-                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
-                >
-                  Ir al sitio
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article
-            class="bg-white rounded-2xl shadow-sm border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-300"
-          >
-            <div class="card-img-wrap overflow-hidden">
-              <img
-                src="images/Orquiteck.png"
-                class="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
-                alt="Orquiteck"
-              />
-            </div>
-
-            <div class="p-5">
-              <h3 class="text-lg font-semibold">Orquiteck</h3>
-
-              <p class="mt-2 text-sm text-[color:var(--muted)]">
-                Plataforma de automatización con IA para WhatsApp que optimiza la atención al cliente y los procesos empresariales.
-              </p>
-
-              <div class="mt-4 text-xs text-slate-600">
-                HTML · JavaScript · TailwindCSS · PostgreSQL · N8N
-              </div>
-
-              <div class="mt-5 flex gap-3">
-                <a
-                  href="https://github.com/daniloaces5/Orquiteck"
-                  class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-300 transition-all duration-300 hover:bg-slate-900 hover:text-white hover:border-slate-900"
-                >
-                  Ver GitHub
-                </a>
-
-                <a
-                  href="https://orquiteck.vercel.app/"
-                  class="px-4 py-2 text-sm font-medium rounded-lg bg-[color:var(--accent)] text-white transition-all duration-300 hover:opacity-90 hover:scale-105"
-                >
-                  Ver sitio
+                  Ir ao site
                 </a>
               </div>
             </div>
@@ -270,20 +357,93 @@
 
       <hr class="my-14 hr" />
 
+      <section id="services">
+        <h2 class="text-2xl font-bold" data-i18n="services_h2">Serviços</h2>
+        <p
+          class="mt-2 text-sm text-[color:var(--muted)] max-w-2xl"
+          data-i18n="services_p"
+        >
+          Projetos pontuais, com prazo e escopo definidos.
+        </p>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-3">
+          <div
+            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-300"
+          >
+            <h3 class="text-lg font-semibold" data-i18n="svc1_title">
+              Bot de atendimento no WhatsApp
+            </h3>
+            <p
+              class="mt-2 text-sm text-[color:var(--muted)]"
+              data-i18n="svc1_desc"
+            >
+              Automação com IA para responder e conduzir conversas de
+              atendimento no WhatsApp.
+            </p>
+            <div class="mt-4 text-sm font-semibold text-[color:var(--accent)]">
+              <span data-i18n="price_from">A partir de</span> R$
+              <span class="price-value">[SEU PREÇO / TU PRECIO]</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-300"
+          >
+            <h3 class="text-lg font-semibold" data-i18n="svc2_title">
+              Automação com n8n
+            </h3>
+            <p
+              class="mt-2 text-sm text-[color:var(--muted)]"
+              data-i18n="svc2_desc"
+            >
+              Configuração de fluxos automatizados entre suas ferramentas
+              (planilhas, WhatsApp, e-mail, sistemas internos).
+            </p>
+            <div class="mt-4 text-sm font-semibold text-[color:var(--accent)]">
+              <span data-i18n="price_from">A partir de</span> R$
+              <span class="price-value">[SEU PREÇO / TU PRECIO]</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-5 shadow-sm border border-gray-300"
+          >
+            <h3 class="text-lg font-semibold" data-i18n="svc3_title">
+              API / Backend sob medida
+            </h3>
+            <p
+              class="mt-2 text-sm text-[color:var(--muted)]"
+              data-i18n="svc3_desc"
+            >
+              Desenvolvimento de APIs e backends com Node.js e PostgreSQL para o
+              seu sistema ou aplicativo.
+            </p>
+            <div
+              class="mt-4 text-sm font-semibold text-[color:var(--accent)]"
+              data-i18n="price_consult"
+            >
+              Orçamento sob consulta
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-14 hr" />
+
       <section id="about">
-        <h2 class="text-2xl font-bold">Sobre mí</h2>
+        <h2 class="text-2xl font-bold" data-i18n="about_h2">Sobre mim</h2>
 
         <div class="mt-4 text-[color:var(--muted)] max-w-3xl">
-          <p class="mb-3">
-            Soy desarrollador backend enfocado en construir APIs robustas y
-            mantenibles. Disfruto diseñar modelos de datos eficientes, optimizar
-            consultas SQL y resolver problemas de rendimiento en sistemas
-            backend.
+          <p class="mb-3" data-i18n="about_p1">
+            Sou desenvolvedor autodidata focado em automação de processos com IA
+            e integração de sistemas via WhatsApp. Gosto de simplificar tarefas
+            repetitivas do dia a dia de pequenos negócios, transformando
+            processos manuais em fluxos automatizados.
           </p>
-          <p>
-            Trabajo con Node.js, Express y PostgreSQL y me interesa
-            especialmente la arquitectura de sistemas, observabilidad y
-            despliegue en internet.
+          <p data-i18n="about_p2">
+            Trabalho com Node.js, Express, PostgreSQL e n8n, com experiência em
+            arquitetura de sistemas multicanal e deploy em servidores na
+            internet.
           </p>
         </div>
       </section>
@@ -291,10 +451,20 @@
       <hr class="my-14 hr" />
 
       <section id="contact">
-        <h2 class="text-2xl font-bold">Contacto</h2>
-        <p class="mt-2 text-sm text-[color:var(--muted)]">
-          ¿Necesitas una API o backend escalable? Escríbeme.
+        <h2 class="text-2xl font-bold" data-i18n="contact_h2">Contato</h2>
+        <p class="mt-2 text-sm text-[color:var(--muted)]" data-i18n="contact_p">
+          Precisa de uma automação, bot de WhatsApp ou backend? Me chama.
         </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a
+            href="https://wa.me/55SEUNUMEROAQUI"
+            class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-500"
+            data-i18n="cta_whatsapp"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
 
         <div
           class="mt-6 max-w-xl bg-white rounded-2xl p-6 shadow-sm border border-gray-300"
@@ -307,27 +477,31 @@
             <input
               name="name"
               required
-              placeholder="Nombre"
+              placeholder="Nome"
+              data-i18n-placeholder="ph_name"
               class="w-full p-3 border border-gray-300 rounded-md"
             />
             <input
               name="_replyto"
               type="email"
               required
-              placeholder="Email"
+              placeholder="E-mail"
+              data-i18n-placeholder="ph_email"
               class="w-full p-3 border border-gray-300 rounded-md"
             />
             <textarea
               name="message"
               rows="5"
               required
-              placeholder="Mensaje"
+              placeholder="Mensagem"
+              data-i18n-placeholder="ph_message"
               class="w-full p-3 border border-gray-300 rounded-md"
             ></textarea>
             <button
               class="bg-[color:var(--accent)] text-white px-4 py-2 rounded-md font-semibold"
+              data-i18n="btn_send"
             >
-              Enviar mensaje
+              Enviar mensagem
             </button>
           </form>
         </div>
@@ -338,14 +512,177 @@
       <div
         class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-sm text-slate-600"
       >
-        <div>&copy; 2025 Danilo</div>
+        <div>&copy; 2026 Danilo</div>
         <div class="flex gap-4">
+          <a href="https://wa.me/55SEUNUMEROAQUI">WhatsApp</a>
           <a href="https://github.com/daniloaces5">GitHub</a>
-          <a href="mailto:daniloaces5@gmail.com">Email</a>
+          <a href="mailto:daniloaces5@gmail.com" data-i18n="footer_email"
+            >E-mail</a
+          >
         </div>
       </div>
     </footer>
 
     <script type="module" src="src/script.js"></script>
+    <script>
+      const i18n = {
+        pt: {
+          logo_suffix: "·AUTOMAÇÃO",
+          nav_projects: "Projetos",
+          nav_services: "Serviços",
+          nav_about: "Sobre",
+          nav_contact: "Contato",
+          badge_available: "Disponível para novos projetos",
+          hero_h1:
+            "Automatizo atendimento e processos com IA para pequenos negócios",
+          hero_p:
+            "Desenvolvedor backend especializado em automações com WhatsApp, n8n e IA. Construo bots de atendimento, fluxos automatizados e integrações que economizam tempo real no dia a dia do seu negócio — além de APIs e backends sob medida com Node.js e PostgreSQL.",
+          cta_whatsapp: "Falar no WhatsApp",
+          cta_projects: "Ver projetos",
+          tag_ia: "Automação com IA",
+          projects_h2: "Projetos",
+          projects_p:
+            "Projetos que mostram automação de atendimento, arquitetura backend e modelagem de dados.",
+          orq_title: "Orquiteck — Automação de atendimento com IA",
+          orq_desc:
+            "Projeto demonstrativo: sistema de automação multicanal (WhatsApp, Telegram e site) que conduz conversas de atendimento usando IA, com fluxos independentes por canal convergindo em um mesmo motor de decisão central.",
+          btn_github: "Ver GitHub",
+          btn_site_orq: "Ver site",
+          cta_view_project: "Ver projeto",
+          barb_title: "Sistema de Barbearia — Backend completo",
+          barb_desc:
+            "Sistema com cadastro, login, edição de perfil e controle de papéis (admin/cliente), com autenticação JWT e arquitetura RESTful.",
+          btn_site_barb: "Ir ao site",
+          services_h2: "Serviços",
+          services_p: "Projetos pontuais, com prazo e escopo definidos.",
+          svc1_title: "Bot de atendimento no WhatsApp",
+          svc1_desc:
+            "Automação com IA para responder e conduzir conversas de atendimento no WhatsApp.",
+          svc2_title: "Automação com n8n",
+          svc2_desc:
+            "Configuração de fluxos automatizados entre suas ferramentas (planilhas, WhatsApp, e-mail, sistemas internos).",
+          svc3_title: "API / Backend sob medida",
+          svc3_desc:
+            "Desenvolvimento de APIs e backends com Node.js e PostgreSQL para o seu sistema ou aplicativo.",
+          price_from: "A partir de",
+          price_consult: "Orçamento sob consulta",
+          about_h2: "Sobre mim",
+          about_p1:
+            "Sou desenvolvedor autodidata focado em automação de processos com IA e integração de sistemas via WhatsApp. Gosto de simplificar tarefas repetitivas do dia a dia de pequenos negócios, transformando processos manuais em fluxos automatizados.",
+          about_p2:
+            "Trabalho com Node.js, Express, PostgreSQL e n8n, com experiência em arquitetura de sistemas multicanal e deploy em servidores na internet.",
+          contact_h2: "Contato",
+          contact_p:
+            "Precisa de uma automação, bot de WhatsApp ou backend? Me chama.",
+          ph_name: "Nome",
+          ph_email: "E-mail",
+          ph_message: "Mensagem",
+          btn_send: "Enviar mensagem",
+          footer_email: "E-mail",
+          page_title: "Danilo — Automação com IA · WhatsApp · Backend Node.js",
+          page_description:
+            "Danilo — Desenvolvedor especializado em automação com IA, bots de WhatsApp e backends com Node.js. Disponível para novos projetos.",
+        },
+        es: {
+          logo_suffix: "·AUTOMATIZACIÓN",
+          nav_projects: "Proyectos",
+          nav_services: "Servicios",
+          nav_about: "Sobre mí",
+          nav_contact: "Contacto",
+          badge_available: "Disponible para nuevos proyectos",
+          hero_h1:
+            "Automatizo atención y procesos con IA para pequeños negocios",
+          hero_p:
+            "Desarrollador backend especializado en automatizaciones con WhatsApp, n8n e IA. Construyo bots de atención, flujos automatizados e integraciones que ahorran tiempo real en el día a día de tu negocio — además de APIs y backends a medida con Node.js y PostgreSQL.",
+          cta_whatsapp: "Hablar por WhatsApp",
+          cta_projects: "Ver proyectos",
+          tag_ia: "Automatización con IA",
+          projects_h2: "Proyectos",
+          projects_p:
+            "Proyectos que muestran automatización de atención, arquitectura backend y modelado de datos.",
+          orq_title: "Orquiteck — Automatización de atención con IA",
+          orq_desc:
+            "Proyecto demostrativo: sistema de automatización multicanal (WhatsApp, Telegram y sitio web) que conduce conversaciones de atención usando IA, con flujos independientes por canal que convergen en un mismo motor de decisión central.",
+          btn_github: "Ver GitHub",
+          btn_site_orq: "Ver sitio",
+          cta_view_project: "Ver proyecto",
+          barb_title: "Sistema de Barbería — Backend completo",
+          barb_desc:
+            "Sistema con registro, login, edición de perfil y control de roles (admin/cliente), con autenticación JWT y arquitectura RESTful.",
+          btn_site_barb: "Ir al sitio",
+          services_h2: "Servicios",
+          services_p: "Proyectos puntuales, con plazo y alcance definidos.",
+          svc1_title: "Bot de atención por WhatsApp",
+          svc1_desc:
+            "Automatización con IA para responder y conducir conversaciones de atención por WhatsApp.",
+          svc2_title: "Automatización con n8n",
+          svc2_desc:
+            "Configuración de flujos automatizados entre tus herramientas (hojas de cálculo, WhatsApp, correo, sistemas internos).",
+          svc3_title: "API / Backend a medida",
+          svc3_desc:
+            "Desarrollo de APIs y backends con Node.js y PostgreSQL para tu sistema o aplicación.",
+          price_from: "Desde",
+          price_consult: "Presupuesto a consultar",
+          about_h2: "Sobre mí",
+          about_p1:
+            "Soy desarrollador autodidacta enfocado en automatización de procesos con IA e integración de sistemas vía WhatsApp. Me gusta simplificar tareas repetitivas del día a día de pequeños negocios, transformando procesos manuales en flujos automatizados.",
+          about_p2:
+            "Trabajo con Node.js, Express, PostgreSQL y n8n, con experiencia en arquitectura de sistemas multicanal y despliegue en servidores en internet.",
+          contact_h2: "Contacto",
+          contact_p:
+            "¿Necesitas una automatización, bot de WhatsApp o backend? Escríbeme.",
+          ph_name: "Nombre",
+          ph_email: "Correo electrónico",
+          ph_message: "Mensaje",
+          btn_send: "Enviar mensaje",
+          footer_email: "Correo",
+          page_title:
+            "Danilo — Automatización con IA · WhatsApp · Backend Node.js",
+          page_description:
+            "Danilo — Desarrollador especializado en automatización con IA, bots de WhatsApp y backends con Node.js. Disponible para nuevos proyectos.",
+        },
+      };
+
+      function setLang(lang) {
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (i18n[lang][key]) el.textContent = i18n[lang][key];
+        });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-placeholder");
+          if (i18n[lang][key]) el.setAttribute("placeholder", i18n[lang][key]);
+        });
+        document.getElementById("page-title").textContent =
+          i18n[lang].page_title;
+        document
+          .getElementById("page-description")
+          .setAttribute("content", i18n[lang].page_description);
+        document
+          .getElementById("html-root")
+          .setAttribute("lang", lang === "pt" ? "pt-br" : "es");
+
+        document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+          const active = btn.getAttribute("data-lang-btn") === lang;
+          btn.classList.toggle("bg-[color:var(--accent)]", active);
+          btn.classList.toggle("text-white", active);
+        });
+
+        localStorage.setItem("siteLang", lang);
+      }
+
+      (function initLang() {
+        const saved = localStorage.getItem("siteLang");
+        if (saved) {
+          setLang(saved);
+          return;
+        }
+        const browserLang = (navigator.language || "pt").toLowerCase();
+        if (browserLang.startsWith("es")) {
+          setLang("es");
+        } else {
+          setLang("pt");
+        }
+      })();
+    </script>
   </body>
 </html>

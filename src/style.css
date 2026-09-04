@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
@@ -15,8 +16,21 @@
   --color-gris: #2f3e46;
   --color-negro: #0d1117;
 
-  --font-anton: "Anton", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
   --font-inter: "Inter", sans-serif;
+}
+
+/* =========================
+   TOKENS
+   Fuente única de verdad: todo alias a los colores del @theme,
+   nada de hex duplicado que pueda desincronizarse.
+========================= */
+
+:root {
+  --accent: var(--color-naranja);
+  --muted: #6b7280;
+  --bg: var(--color-crema);
+  --card: #ffffff;
 }
 
 /* =========================
@@ -25,6 +39,7 @@
 
 body {
   min-width: 520px;
+  @apply font-inter;
 }
 
 @media (max-width: 520px) {
@@ -33,12 +48,17 @@ body {
   }
 }
 
+@layer base {
+  h1 {
+    @apply font-display tracking-wide;
+  }
+}
+
 /* =========================
    COMPONENTS
 ========================= */
 
 @layer components {
-
   header nav a {
     @apply mx-5 hover:text-naranja transition;
   }
@@ -52,22 +72,22 @@ body {
   }
 
   h2 {
-    @apply text-4xl font-bold mb-10 flex justify-center md:justify-start;
+    @apply font-display tracking-wide text-4xl mb-10 flex justify-center md:justify-start;
   }
 
-  #projects .card {
-    @apply mx-auto bg-white rounded-3xl shadow-lg overflow-hidden mb-16;
-  }
-
-  #projects .card_img {
-    @apply relative rounded-t-3xl overflow-hidden;
+  #projects .card-img-wrap {
+    @apply relative;
   }
 
   #projects .revel {
-    @apply absolute inset-0 bg-black/80 opacity-0 
-           group-hover:opacity-100 
-           flex flex-col items-center justify-center 
+    @apply absolute inset-0 bg-black/80 opacity-0
+           group-hover:opacity-100
+           flex flex-col items-center justify-center gap-1
            transition-opacity duration-300 z-10;
+  }
+
+  #projects .revel span {
+    @apply font-display text-white text-xl tracking-wide;
   }
 
   /* Hamburguesa animación */
@@ -83,7 +103,6 @@ body {
   .open span:nth-child(3) {
     @apply -translate-y-[8px] -rotate-45 bg-naranja;
   }
-
 }
 
 /* =========================
@@ -98,14 +117,9 @@ body {
 
 /* =========================
    UTILITIES EXTRA
+   (sin @layer a propósito: necesita ganarle a utilidades de Tailwind
+   ya puestas en el HTML, como shadow-sm)
 ========================= */
-
-:root {
-  --accent: #ff7a3d;
-  --muted: #6b7280;
-  --bg: #f7f3ee;
-  --card: #ffffff;
-}
 
 .focus-ring:focus {
   outline: 2px solid var(--accent);
@@ -114,15 +128,24 @@ body {
 
 .card-img-wrap {
   overflow: hidden;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
 }
 
 .card-img-wrap img {
-  transition: transform .6s ease;
+  transition: transform 0.6s ease;
 }
 
 .card-img-wrap:hover img {
   transform: scale(1.06);
+}
+
+/* Cards de servicio: planas y con acento lateral, para no leer
+   como el mismo widget que las cards de proyecto (con imagen y sombra) */
+#services .grid > div {
+  box-shadow: none;
+  border-width: 1px;
+  border-left-width: 4px;
+  border-left-color: var(--color-naranja);
 }
 
 .sr-only {
